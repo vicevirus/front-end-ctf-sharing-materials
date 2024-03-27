@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Love Letter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        
+        .letter {
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff4081;
+        }
+
+        p {
+            color: #888;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        pre {
+            text-align: left;
+        }
+    </style>
+
+    <!-- oh there is a csp here -->
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' data: 'unsafe-eval'">
+</head>
+<body>
+    <div class="letter">
+        <h1>Love Letter</h1>
+        <!-- autoescape is true here, XSS payload won't work here (Flask specific feature) -->
+        {% autoescape true %}
+        <p><pre>{{ variables[0] }}</pre></p>
+        {% endautoescape %}
+    </div>
+    <!-- here autoescape is false, XSS payload WILL most likely work here -->
+    {% autoescape false %}
+    <p class="result">With the help of our AI technology, your letter scored {{ variables[1] }}% We hope your beloved {{ variables[2] }} will adore it!</p>
+    {% endautoescape %}
+</body>
+</html>
