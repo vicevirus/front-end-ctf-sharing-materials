@@ -1,0 +1,17 @@
+{
+    "name": "challenge2",
+    "version": "1.0.0",
+    "description": "A simple Node.js app with a CSS injection vuln.",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "*",
+        "puppeteer": "*",
+        "dompurify": "*",
+        "jsdom": "*"
+    },
+    "author": "vicevirus",
+    "license": "ISC"
+}

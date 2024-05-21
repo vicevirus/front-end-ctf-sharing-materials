@@ -1,0 +1,15 @@
+{
+    "name": "challenge1",
+    "version": "1.0.0",
+    "description": "A simple Node.js app with a reflected XSS vulnerability for educational purposes.",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "*",
+        "puppeteer": "*"
+    },
+    "author": "vicevirus",
+    "license": "ISC"
+}
