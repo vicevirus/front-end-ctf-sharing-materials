@@ -33,6 +33,7 @@ app.get('/report', async (req, res) => {
   }
 });
 
+// Secret endpoint which you could never access :)
 app.get('/secret', async (req, res) => {
   const remoteIP = req.socket.remoteAddress;
   if (remoteIP === '::ffff:127.0.0.1' || remoteIP === '::1' || remoteIP === '127.0.0.1') {
