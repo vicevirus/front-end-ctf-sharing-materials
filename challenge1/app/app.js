@@ -9,7 +9,10 @@ app.get('/', (req, res) => {
 
   if (name) {
     // Super strong filter >:) Filter out spaces, single quotes, double quotes, and <script> tags
-    name = name.replace(/['"`]/g, '').replace(/<script.*?>.*?<\/script>/ig, '').replace(/\s+/g, '');
+    name = name.replace(/['"`]/g, '')
+          .replace(/<\s*s\s*c\s*r\s*i\s*p\s*t\s*.*?>.*?<\s*\/\s*s\s*c\s*r\s*i\s*p\s*t\s*>/mi, '')
+          .replace(/\s+/g, '');
+
     
     res.send(`Hello, ${name}! <br> <a href="/report">Report here</a>`);
   } else {
