@@ -6,6 +6,7 @@ const port = 7832;
 // Main page
 app.get('/', (req, res) => {
   let name = req.query.name; // Get user input from query string
+  console.log(name);
 
   if (name) {
     // Super strong filter >:) Filter out spaces, single quotes, double quotes, and <script> tags
